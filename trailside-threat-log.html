@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Security Alert</title>
+  <style>
+    body {
+      background-color: black;
+      color: #00ff00;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 1.1rem;
+      margin: 0;
+      overflow: hidden;
+    }
+    #terminal {
+      white-space: pre;
+      padding: 20px;
+      animation: flicker 0.15s infinite;
+    }
+    @keyframes flicker {
+      0% { opacity: 1; }
+      50% { opacity: 0.85; }
+      100% { opacity: 1; }
+    }
+    .red-alert {
+      color: red;
+      font-weight: bold;
+      animation: pulse 1s infinite;
+    }
+    @keyframes pulse {
+      0% { opacity: 0.3; }
+      50% { opacity: 1; }
+      100% { opacity: 0.3; }
+    }
+  </style>
+</head>
+<body>
+  <div id="terminal">
+    Initializing forensic analysis...
+
+    Connecting to Cyber Ops Gateway... OK
+
+    Matching session fingerprint... ✅
+
+    Cross-referencing IP & User-Agent data... DONE
+
+    <span class="red-alert">[!!] Entity Match: TrailsideRV_KC_Entity_Ref</span>
+
+    Logging unauthorized access attempt...
+
+    <span class="red-alert">System Access Flagged</span>
+
+    This session has been permanently logged under Incident ID: <b>#A-B-A-D-D-0-N</b>
+
+    
+Press ESC to attempt session abort...
+  </div>
+  <script>
+    // Optional sound alert (commented out for stealth mode)
+    // let audio = new Audio("https://www.soundjay.com/button/beep-07.wav");
+    // audio.play();
+
+    document.body.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        document.getElementById("terminal").innerHTML += "\n\n[ABORT FAILED]\nTrace initialized.";
+      }
+    });
+  </script>
+</body>
+</html>
